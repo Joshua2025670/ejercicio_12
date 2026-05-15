@@ -3,22 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculadora Básica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Calculadora Basica</h1>
-    <form>
-        <label>Numero 1:</label>
-        <input type="number" id="n1" name="n1" placeholder="Ingrese un numero"/>
-        <br>
-        <label>Numero 2:</label>
-        <input type="number" id="n2" name="n2" placeholder="Ingrese un numero" />
-        <br>
-        <p id="resultado">Resultado: 0</p>
-        <input type="button" value="Suma" ONCLICK="suma()">
-        <input type="button" value="Resta" onclick="resta()">
-        <input type="button" value="Multiplicacion" onclick="multiplicacion()">
-        <input type="button" value="Division" onclick="div()">
-    </form>
+    <div class="container text-center">
+        <h1>Calculadora Cientifica</h1>
+    </div>
+    <div class="mb-3">
+        <input type="text" id="display" class="form-control fs-2" placeholder="0" readonly style="text-align: right; background-color: lightcyan; color: black;">
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row" style="margin-bottom: 10px">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('7')">7</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('8')">8</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('9')">9</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setOperador('+')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row" style="margin-bottom: 10px">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('4')">4</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('5')">5</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('6')">6</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setOperador('-')">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row" style="margin-bottom: 10px">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('1')">1</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('2')">2</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('3')">3</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setOperador('*')">*</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="card">
+        <div class="card-body">
+            <div class="row" style="margin-bottom: 10px">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setDigito('0')">0</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2">.</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="obtenerRes()">=</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setOperador('/')">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row" style="margin-bottom: 10px">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="borrar()">C</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="Raiz()">√</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="log()">log</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-secondary w-100 fs-2" onclick="setOperador('**')">X<sup>y</sup></button>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <p style="text-align: center"> Disenado y programado por: <strong>Joshua Abraham Reyes Rodriguez</strong></p>
+        </div>
+    </div>
 <script src="/js/calculadora.js"></script>
 </body>
 </html>
